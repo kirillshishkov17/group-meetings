@@ -1,20 +1,24 @@
-package ru.shishkov.groupmeeting.controllers.models;
+package ru.shishkov.groupmeeting.models;
 
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Component
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String login;
     private String password;
-    private static int uniqId = 0;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String login, String password, String name) {
-        this.id = uniqId++;
         this.login = login;
         this.password = password;
         this.name = name;
@@ -36,15 +40,19 @@ public class User {
         this.password = password;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }
