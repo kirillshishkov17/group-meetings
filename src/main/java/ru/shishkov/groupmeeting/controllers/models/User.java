@@ -3,16 +3,18 @@ package ru.shishkov.groupmeeting.controllers.models;
 public class User {
 
     private Integer id;
+    private String name;
     private String login;
     private String password;
     private static int uniqId = 0;
 
     public User() {}
 
-    public User(String login, String password) {
+    public User(String login, String password, String name) {
         this.id = uniqId++;
         this.login = login;
         this.password = password;
+        this.name = name;
     }
 
     public String getLogin() {
@@ -33,5 +35,13 @@ public class User {
 
     public Integer getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
