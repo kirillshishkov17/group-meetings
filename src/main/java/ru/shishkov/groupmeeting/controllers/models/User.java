@@ -1,5 +1,8 @@
 package ru.shishkov.groupmeeting.controllers.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 
     private Integer id;
