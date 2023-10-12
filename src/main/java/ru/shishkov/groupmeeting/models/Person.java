@@ -6,19 +6,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
     private String login;
     private String password;
+    private String name;
 
-    public User() {
+    public Person() {
     }
 
-    public User(String login, String password, String name) {
+    public Person(String login, String password, String name) {
         this.login = login;
         this.password = password;
         this.name = name;
